@@ -21,10 +21,13 @@ def get_base64_encoded_image(image_path):
         return base64.b64encode(img_file.read()).decode('utf-8')
 
 
+IMAGE_FILENAME = Path(__file__).parent/'image/country_explorer_img.jpg'
+
+
 # CSS to inject contained in a Python multiline string
 background_image_style = f"""
 <style>
-html, body, [class*="ViewContainer"] {{background-image: url("data:image/jpeg;base64,{get_base64_encoded_image('C:/Users/HUAWEI/Documents/gdp/country_explorer_img.jpg')}");
+html, body, [class*="ViewContainer"] {{background-image: url("data:image/jpeg;base64,{get_base64_encoded_image(IMAGE_FILENAME)}");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -45,8 +48,8 @@ def get_gdp_data():
     """
    
     # Instead of a CSV on disk, you could read from an HTTP endpoint here too.
-    #DATA_FILENAME = Path(__file__).parent/'data/gdp_data.csv'
-    DATA_FILENAME = "C:/Users/HUAWEI/Documents/gdp/gdp_data.csv"
+    DATA_FILENAME = Path(__file__).parent/'data/gdp_data.csv'
+    #DATA_FILENAME = "C:/Users/HUAWEI/Documents/gdp/gdp_data.csv"
     raw_gdp_df = pd.read_csv(DATA_FILENAME)
 
     MIN_YEAR = 2002

@@ -21,7 +21,7 @@ def get_base64_encoded_image(image_path):
         return base64.b64encode(img_file.read()).decode('utf-8')
 
 def full_page_background_image_base64():
-    image_path = "C:/Users/HUAWEI/Documents/gdp/world_un_img.jpg"  # Update this path
+    image_path = Path(__file__).parent/'image/world_un_img.jpg'  # Update this path
     encoded_image = get_base64_encoded_image(image_path)
     css = f"""
         <style>
@@ -48,9 +48,10 @@ def get_gdp_data():
     """
    
     # Instead of a CSV on disk, you could read from an HTTP endpoint here too.
-    #DATA_FILENAME = Path(__file__).parent/'data/gdp_data.csv'
-    DATA_FILENAME = "C:/Users/HUAWEI/Documents/gdp/gdp_data.csv"
-    DATA_FILENAME2 = "C:/Users/HUAWEI/Documents/gdp/population_data.csv"
+    DATA_FILENAME = Path(__file__).parent/'data/gdp_data.csv'
+    DATA_FILENAME2 = Path(__file__).parent/'data/population_data.csv'
+    #DATA_FILENAME = "C:/Users/HUAWEI/Documents/gdp/gdp_data.csv"
+    #DATA_FILENAME2 = "C:/Users/HUAWEI/Documents/gdp/population_data.csv"
     raw_gdp_df = pd.read_csv(DATA_FILENAME)
     raw_population_df = pd.read_csv(DATA_FILENAME2)
 

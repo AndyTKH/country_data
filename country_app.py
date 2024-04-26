@@ -241,7 +241,7 @@ for i, country in enumerate(selected_countries):
             delta_color = 'normal'
 
         st.metric(
-            label=f'{country} Population',
+            label=f'{country} ',
             value=f'{last_pop:,.0f} M',
             delta=growth,
             delta_color=delta_color

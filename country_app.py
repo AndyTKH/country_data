@@ -122,14 +122,14 @@ max_value = gdp_df['Year'].max()
 countries = gdp_df['Country Name'].unique()
 
 if not len(countries):
-    st.warning("Select at least one country")
+    st.sidebar.warning("Select at least one country")
 
-selected_countries = st.multiselect(
+selected_countries = st.sidebar.multiselect(
     'Select countries:',
     countries,
     ['China', 'India', 'United Kingdom', 'United States', 'Japan'])
 
-from_year, to_year = st.slider(
+from_year, to_year = st.sidebar.slider(
     'Range of years',
     min_value=min_value,
     max_value=max_value,

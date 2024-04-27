@@ -110,7 +110,7 @@ All data is collected from [World Bank Open Data](https://data.worldbank.org/) w
 '''
 
 # Add some spacing
-''
+
 
 
 
@@ -137,9 +137,7 @@ from_year, to_year = st.sidebar.slider(
 
 
 ''
-''
-''
-''
+
 
 
 # Filter the data
